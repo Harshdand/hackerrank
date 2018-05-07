@@ -10,21 +10,27 @@
 //   s.pop(); // returns 2
 //   s.pop(); // returns 1
 
+// stack based on indexes, does'nt remove the items
 class Stack {
     constructor() {
         this.data = [];
+        this.top = -1;
     }
 
     push(record) {
-        this.data.unshift(record);
+        this.data[++this.top] = record;
     }
 
     pop() {
-        return this.data.shift();
+        return this.data[this.top--];
     }
 
     peek() {
-        return this.data[0];
+        return this.data[this.top];
+    }
+
+    isEmpty() {
+        return this.top === -1;
     }
 }
 
