@@ -14,7 +14,33 @@
 //       ' ### '
 //       '#####'
 
+// recursive solution
+function pyramid(n, row = 0, step = '') {
+    if (n === row) {
+        return;
+    }
+
+    if (step.length === n * 2 - 1) {
+        console.log(step);
+        return pyramid(n, row + 1);
+    }
+
+    const midpoint = Math.floor((n * 2 - 1) / 2);
+
+    if (step.length >= midpoint - row && step.length <= midpoint + row) {
+        step += '#';
+    }
+    else {
+        step += ' ';
+    }
+
+    pyramid(n, row, step);
+
+}
+
+
 //iterative solution
+/*
 function pyramid(n) {
     const midpoint = Math.floor((n * 2 - 1) / 2);
 
@@ -33,5 +59,6 @@ function pyramid(n) {
         console.log(steps);
     }
 }
+*/
 
 module.exports = pyramid;
