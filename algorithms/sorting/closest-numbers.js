@@ -12,9 +12,7 @@ function closestNumbers(arr) {
         let diff = arr[index + 1] - arr[index]
         if (diff < min) {
             min = diff;
-            result = [];
-            result.push(arr[index]);
-            result.push(arr[index + 1]);
+            result = [arr[index], arr[index + 1]];
         }
         else if (diff === min) {
             result.push(arr[index]);
