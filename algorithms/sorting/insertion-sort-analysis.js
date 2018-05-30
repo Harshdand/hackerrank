@@ -5,6 +5,7 @@ function insertionSort(arr) {
     let shifts = 0;
 
     // todo complete this
+    // use binary indexed tree
 
     return shifts;
 }
